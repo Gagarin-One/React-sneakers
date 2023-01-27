@@ -1,0 +1,31 @@
+@import '../libs/variables';
+
+.footer{
+  width: 1230px;
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  padding-top: 40px;
+  justify-content: space-between;
+  h2{
+    color:$gray;
+  }
+  .links{
+    display:flex;
+    flex-direction:column;
+  }
+  a{
+    color:white
+  }
+  .payment{
+    width:120px;
+    display: flex;
+    justify-content: space-between;
+    align-items:start;
+  }
+  .right-side{
+    width:400px;
+    justify-content: space-between;
+    display: flex;
+  }
+}
