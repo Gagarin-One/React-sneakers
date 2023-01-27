@@ -7,8 +7,18 @@ body {
   background-color: $background;
   
 }
+
+
+.red{
+  color:$red;
+}
+
+.transfer{
+  white-space: pre-line
+}
 .wrapper{
-  margin: 0px auto;
-  height: 100%;
-  max-width: 1230px;
+  width:100%;
+}
+.gray-background{
+  background-color:$gray-line;
 }
