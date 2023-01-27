@@ -1,10 +1,25 @@
 @import '../libs/variables';
 
-.top-header{
+
+.side-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.common-header{
+  justify-content: space-between;
+  margin: 0 auto;
   max-width: 1230px;
+  display:flex;
+}
+
+.top-header-container{
+  width: 100%;
   height: 37px;
   background-color:$gray;
-  display:flex;
+}
+
+.top-header{
   color:white;
   & h2,a {
     line-height: 37px;
@@ -12,12 +27,6 @@
   .login {
     width: 160px;
     height: 30px;
-    margin-left: 60px;
-    display: flex;
-    justify-content: space-between;
-    .red{
-      color:red;
-    }
   }
   .delivery{
     margin-left: 50px;
@@ -27,7 +36,27 @@
   }
   .contacts{
     margin-left:auto;
-    margin-right: 40px;
-    display: flex;
   }
 };
+
+
+.bottom-header-container{
+  width: 100%;
+  height: 73px;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+}
+
+.bottom-header{
+  color:rgb(0, 0, 0);
+  & h2,a {
+    line-height: 68px;
+  }
+  .product-nav{
+    width: 600px;
+    margin-top: 3px;
+  }
+  .cart-and-search{
+    width: 60px;
+    align-items: center;
+  }
+}
