@@ -7,7 +7,13 @@ body {
   background-color: $background;
   
 }
-
+button{
+  color:$black;
+  border:none;
+  font-size:15px;
+  font-weight: 600;
+  background-color: white;
+}
 
 .red{
   color:$red;

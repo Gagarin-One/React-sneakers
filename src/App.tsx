@@ -6,6 +6,7 @@ import Cart from './Pages/Cart';
 import Home from './Pages/Home';
 import NotFound from './Pages/NotFound';
 import FullSneaker from './Pages/FullSneaker';
+import Products from './Pages/Products';
 
 
 function App() {
@@ -23,6 +24,18 @@ function App() {
           <Route
           path="Sneaker/:id"
           element={<FullSneaker/>}
+          />
+          <Route
+          path="Nike"
+          element={<Products/>}
+          />
+          <Route
+          path="Adidas"
+          element={<Products/>}
+          />
+          <Route
+          path="Sneakers"
+          element={<Products/>}
           />
           <Route
           path="*"
