@@ -56,15 +56,15 @@ const Home = () => {
       </div>
       </div>
       <div className="bottom-posters">
-        <Link to="/">
+        <Link to="Nike">
           <img  src="https://www.gannett-cdn.com/presto/2019/07/25/USAT/28d2fb25-3855-4e27-9b37-a090f9be2cfe-Fa19_RN_Joyride_RN_Lead_ProductSuperiority_Square_89478.jpg" alt="poster" />
           <b>Nike</b>
         </Link>
-        <Link to="/">
+        <Link to="Adidas">
           <img  src="https://i.pinimg.com/originals/13/bd/55/13bd556e32fc35bec2f720c3ac94f025.jpg" alt="poster" />
           <b>Adidas</b>
         </Link>
-        <Link to="/">
+        <Link to="Sale">
           <img src="https://www.freshnessmag.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTM1OTgxMTk1OTM4MDc3MTUw/nike-sb-dunk-high-pro-clouds-00.jpg" alt="poster" />
           <b>Sale</b>
         </Link>
