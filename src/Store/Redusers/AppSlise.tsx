@@ -11,15 +11,18 @@ type MainState = {
 
 const initialState: MainState = {
     AllProducts:[
-      {price:177, name:'nike', img:'https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg'},
-      {price:1, name:'nike', img:'https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg'},
-      {price:1, name:'nike', img:'https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg'},
-      {price:177, name:'nike', img:'https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg'},
-      {price:1, name:'nike', img:'https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg'},
-      {price:1, name:'nike', img:'https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg'},
-      {price:177, name:'nike', img:'https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg'},
-      {price:1, name:'nike', img:'https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg'},
-      {price:1, name:'nike', img:'https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg'},
+      {"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
+      {"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
+      {"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
+      {"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
+      {"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
+      {"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
+      {"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
+      {"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
+      {"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
+      {"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
+      {"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
+      
     ]
 }
 
