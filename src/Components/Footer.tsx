@@ -8,10 +8,10 @@ const Footer = () => {
         <div className="right-side">
         <h2>© 2023 Магазин Sneakers</h2>
       <div className="links">
-        <Link to="">Контакты</Link>
-        <Link to="">Доставка и оплата</Link>
-        <Link to="">Кроссовки</Link>
-        <Link to="">Распродажа</Link>
+        <Link to="Contacts">Контакты</Link>
+        <Link to="Delivery">Доставка и оплата</Link>
+        <Link to="Products">Кроссовки</Link>
+        <Link to="Sale">Распродажа</Link>
       </div>
         </div>
       <div className="payment">

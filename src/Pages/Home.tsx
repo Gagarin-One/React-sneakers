@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export type Product = {
   img:string,
@@ -38,7 +38,7 @@ const Home = () => {
     setOfferSwitch(i)
   }
 
-
+  const navigate = useNavigate()
   const str = 'Они изменили мир. \n Ваша самая любимая обувь на свете.'
   return (
     <div className="home-wrapper">
@@ -46,7 +46,7 @@ const Home = () => {
         <div className='poster-text'>
           <h1>Build for flight</h1>
           <p className='poster-desc transfer'>{str}</p>
-          <button>Купить сейчас</button>
+          <button onClick={() => navigate('/Products')}>Купить сейчас</button>
         </div>
       <div className="poster-img">
       <svg width="700"  viewBox="0 0 1028 503" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,9 +71,15 @@ const Home = () => {
       </div>
       <div className='offers'>
         <div className='switch'>
-          <button className={offerSwitch === 0 ? 'selected' : undefined} onClick={()=> onOfferClick(0)}>Новинки</button>
-          <button className={offerSwitch === 1 ? 'selected' : undefined} onClick={()=>onOfferClick(1)}>Популярное</button>
-          <button className={offerSwitch === 2 ? 'selected' : undefined} onClick={()=>onOfferClick(2)}>Рекомендуем</button>
+          <button 
+          className={offerSwitch === 0 ? 'selected' : undefined} 
+          onClick={()=>onOfferClick(0)}>Новинки</button>
+          <button 
+          className={offerSwitch === 1 ? 'selected' : undefined} 
+          onClick={()=>onOfferClick(1)}>Популярное</button>
+          <button 
+          className={offerSwitch === 2 ? 'selected' : undefined} 
+          onClick={()=>onOfferClick(2)}>Рекомендуем</button>
         </div>
         <div className="product-item-container">
           {fakeArr.map((Product:Product) => 

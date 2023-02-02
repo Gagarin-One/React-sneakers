@@ -37,6 +37,14 @@ function App() {
           path="Sneakers"
           element={<Products/>}
           />
+          <Route 
+          path="Sale" 
+          element={<Products/>}
+          />
+          <Route 
+          path="Products"
+          element={<Products/>}
+          />
           <Route
           path="*"
           element={<NotFound/>}
