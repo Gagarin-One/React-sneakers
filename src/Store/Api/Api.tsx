@@ -33,7 +33,7 @@ export const sneakersApi = createApi({
 
     deleteFromCart: build.mutation<ProductsResponse,string>({
       query:()=>({
-        url:'',
+        url:'cart',
         method:'DELETE'
       }),
       invalidatesTags:[{type: 'products',id:'LIST'}]
