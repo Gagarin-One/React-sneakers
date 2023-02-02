@@ -10,7 +10,7 @@ type Products = {
 type ProductsResponse = Products[]
 const Products = () => {
 
-  const {data =[]} = useGetSnekersQuery()
+  const {data =[]} = useGetSnekersQuery('')
   return (
     <div className="home-wrapper">
        <div className="product-item-container">

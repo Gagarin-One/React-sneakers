@@ -1,4 +1,4 @@
-import { configureStore, combineReducers} from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { sneakersApi } from "./Api/Api";
 import mainReducer from "./Redusers/AppSlise"
 
@@ -10,10 +10,8 @@ const rootReducers = combineReducers({
 
 export const setupStore = () => {
   return configureStore({
-    reducer: {
-      rootReducers,
+    reducer:rootReducers,
       middleware:(getDefaultMiddleware) => getDefaultMiddleware().concat(sneakersApi.middleware)
-    }
   })
 }
 
