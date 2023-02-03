@@ -21,6 +21,10 @@ export const sneakersApi = createApi({
           {type: 'products',id:'LIST'}]
         :[{type: 'products',id:'LIST'}]
     }),
+    
+    getNikes: build.query<ProductsResponse,number>({
+      query: id => `Nikes/?id=${id}`
+    }),
 
     addToCart: build.mutation<ProductsResponse,string>({
       query: (body) =>({
@@ -37,10 +41,11 @@ export const sneakersApi = createApi({
         method:'DELETE'
       }),
       invalidatesTags:[{type: 'products',id:'LIST'}]
-    })
+    }),
   })
 })
 
 export const {useGetSnekersQuery} = sneakersApi
 export const {useAddToCartMutation} = sneakersApi
 export const {useDeleteFromCartMutation} = sneakersApi
+export const {useGetNikesQuery} = sneakersApi
