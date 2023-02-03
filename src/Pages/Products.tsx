@@ -1,7 +1,8 @@
 import { skipToken } from '@reduxjs/toolkit/dist/query';
 import { useGetSnekersQuery } from '../Store/Api/Api';
 import { useAppSelector } from '../Store/hooks';
-import MyLoader from './Loader';
+import MyLoader from '../Components/Loader';
+import { useLocation, useNavigate } from 'react-router';
 type Products = {
   id: number;
   price: number;
@@ -9,7 +10,10 @@ type Products = {
   img: string;
 };
 type ProductsResponse = Products[];
+
 const Products = () => {
+  const Navigate = useNavigate()
+  const Location = useLocation()
   const fakeArr = [...new Array(8)]
   const { data = [], isLoading } = useGetSnekersQuery('');
   return (
@@ -21,7 +25,11 @@ const Products = () => {
         })
       : data.map((Product, i) => {
           return (
-            <div className="product-item" key={i}>
+            <div 
+            className="product-item" 
+            key={i} 
+            onClick={() => Navigate(Location.pathname + '/' + Product.id)}
+            >
               <img src={Product.img} alt="" />
               <h2>{Product.name}</h2>
               <b>{Product.price}</b>
