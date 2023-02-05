@@ -38,6 +38,7 @@ const Header = () => {
             </Link>
           </div>
           <div className="cart-and-search side-header">
+            <Link to='/'>
             <svg
               width="24"
               height="24"
@@ -49,6 +50,9 @@ const Header = () => {
                 fill="black"
               />
             </svg>
+            </Link>
+            
+            <Link to='Cart'>
             <svg
               width="24"
               height="24"
@@ -60,6 +64,8 @@ const Header = () => {
                 fill="black"
               />
             </svg>
+            </Link>
+            
           </div>
         </div>
       </div>
