@@ -1,5 +1,5 @@
 import { skipToken } from '@reduxjs/toolkit/dist/query';
-import { useGetSnekersQuery } from '../Store/Api/Api';
+import { useGetSneakersQuery } from '../Store/Api/Api';
 import { useAppSelector } from '../Store/hooks';
 import MyLoader from '../Components/Loader';
 import { useLocation, useNavigate } from 'react-router';
@@ -15,7 +15,7 @@ const Products = () => {
   const Navigate = useNavigate()
   const Location = useLocation()
   const fakeArr = [...new Array(8)]
-  const { data = [], isLoading } = useGetSnekersQuery('');
+  const { data = [], isLoading } = useGetSneakersQuery('');
   return (
     <div className="home-wrapper">
       <div className="product-item-container">
@@ -28,11 +28,11 @@ const Products = () => {
             <div 
             className="product-item" 
             key={i} 
-            onClick={() => Navigate(Location.pathname + '/' + Product.id)}
+            onClick={() => Navigate(Location.pathname + ':' + Product.id)}
             >
               <img src={Product.img} alt="" />
               <h2>{Product.name}</h2>
-              <b>{Product.price}</b>
+              <b>{Product.price + '₽'}</b>
             </div>
           );
         })}
