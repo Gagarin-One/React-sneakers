@@ -25,7 +25,7 @@ export const sneakersApi = createApi({
         :[{type: 'products',id:'LIST'}]
     }),
     getCartItems: build.query<ProductsResponse,string>({
-      query:()=> 'shoppingCard',
+      query:()=> 'Products',
       providesTags: (result) => result
       ?[...result.map(({id})=> (
         {type:'cartItems' as const , id})),
@@ -46,9 +46,9 @@ export const sneakersApi = createApi({
       invalidatesTags:[{type: 'cartItems',id:'LIST'}]
     }),
 
-    deleteFromCart: build.mutation<ProductsResponse,string>({
-      query:()=>({
-        url:'shoppingCard',
+    deleteFromCart: build.mutation<ProductsResponse,number>({
+      query:(id)=>({
+        url:`Products/${id}`,
         method:'DELETE'
       }),
       invalidatesTags:[{type: 'cartItems',id:'LIST'}]

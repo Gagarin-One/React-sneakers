@@ -64,3 +64,17 @@
     }
   }
 }
+.empty-cart{
+  
+  width: 350px;
+  margin: 60px auto;
+  height: 1000px;
+  & button{
+    margin-top:60px;
+    width:350px;
+    background-color:$red;
+    color:white;
+    border-radius:8px;
+    height: 60px;
+  }
+}
