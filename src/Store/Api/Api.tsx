@@ -36,10 +36,11 @@ export const sneakersApi = createApi({
     getNikes: build.query<Products,number>({
       query: id => `All/${id}`
     }),
+   
 
     addToCart: build.mutation<ProductsResponse,Products>({
       query: (body) =>({
-        url:'shoppingCard',
+        url:'Products',
         method:'POST',
         body
       }),

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 type Products = {
   id: number,
@@ -7,31 +7,39 @@ type Products = {
     img:string,
 }
 type MainState = {
-  AllProducts:Array<Products>
+  isLoading:boolean,
+  error:string,
+  sortCategory:string,
+  products:Array<Products>
 }
 
 const initialState: MainState = {
-    AllProducts:[
-      {"id":0,"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
-      {"id":0,"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
-      {"id":0,"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
-      {"id":0,"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
-      {"id":0,"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
-      {"id":0,"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
-      {"id":0,"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
-      {"id":0,"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
-      {"id":0,"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
-      {"id":0,"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
-      {"id":0,"price":177, "name":"nike", "img":"https://img1.akspic.ru/attachments/crops/1/3/6/8/4/148631/148631-odezhda-kedy-chernyy-karmin-nike-1920x1080.jpg"},
-      
-    ]
+  isLoading:false,
+  error:'',
+  sortCategory:'все',
+  products:[]
 }
 
 export const MainSlice = createSlice({
   name:'Main',
   initialState,
   reducers:{
+    adsFetching(state){
+      state.isLoading = true;
+    },
+    changeCategory(state, action:PayloadAction<string>){
+      state.sortCategory = action.payload
+    },
 
+    adsFetchingSuccess(state, action:PayloadAction<Array<Products>>){
+      state.isLoading = false;
+      state.error = ''
+      state.products = action.payload
+    },
+    adsFetchingError(state, action:PayloadAction<string>){
+      state.isLoading = false;
+      state.error = action.payload
+    }
   }
 })
 
