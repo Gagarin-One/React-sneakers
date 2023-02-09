@@ -1,9 +1,11 @@
 import { skipToken } from '@reduxjs/toolkit/dist/query';
 import { useGetSneakersQuery } from '../Store/Api/Api';
-import { useAppSelector } from '../Store/hooks';
+import { useAppDispatch, useAppSelector } from '../Store/hooks';
 import MyLoader from '../Components/Loader';
 import { useLocation, useNavigate } from 'react-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { FetchProducts } from '../Store/Redusers/ActionCreators';
+import { MainSlice } from '../Store/Redusers/AppSlise';
 type Products = {
   id: number;
   price: number;
@@ -16,20 +18,23 @@ const Products = () => {
   const Navigate = useNavigate();
   const Location = useLocation();
   const fakeArr = [...new Array(8)]; // for loader
-  const { data = [], isLoading } = useGetSneakersQuery('');
-  
+  // const { data = [], isLoading } = useGetSneakersQuery('');
+const {isLoading} = useAppSelector(state => state.MainSlice)
+const {products} = useAppSelector(state => state.MainSlice)
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   const popupList = ['все', 'цена(по возрастанию)', 'цена(по убыванию)'];
   const selectorList = ['all','increase', 'decrease']
   const [sortNameIndex, setSortNameIndex] = useState(0) 
   const [currentSort, setCurrentSort] = useState('all');
-
+const dispatch = useAppDispatch()
   const onClickSelector = (idx: number) => {
     setSortNameIndex(idx)
     setCurrentSort(selectorList[idx]);
     setIsOpenPopup(false);
   };
-
+useEffect(() => {
+  dispatch(FetchProducts(currentSort,'Products'))
+},[currentSort])
 
   return (
     <div className="home-wrapper">
@@ -53,7 +58,7 @@ const Products = () => {
                 </div>
               );
             })
-          : data.map((Product, i) => {
+          : products?.map((Product, i) => {
               return (
                 <div
                   className="product-item"

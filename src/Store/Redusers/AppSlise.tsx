@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-type Products = {
+ export type Products = {
   id: number,
   price:number,
     name:string,
@@ -10,13 +10,13 @@ type MainState = {
   isLoading:boolean,
   error:string,
   sortCategory:string,
-  products:Array<Products>
+  products:Array<Products>|undefined
 }
 
 const initialState: MainState = {
   isLoading:false,
   error:'',
-  sortCategory:'все',
+  sortCategory:'all',
   products:[]
 }
 
@@ -31,7 +31,7 @@ export const MainSlice = createSlice({
       state.sortCategory = action.payload
     },
 
-    adsFetchingSuccess(state, action:PayloadAction<Array<Products>>){
+    adsFetchingSuccess(state, action:PayloadAction<Array<Products>|undefined>){
       state.isLoading = false;
       state.error = ''
       state.products = action.payload

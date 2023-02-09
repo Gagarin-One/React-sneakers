@@ -1,10 +1,11 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { sneakersApi } from "./Api/Api";
-import mainReducer from "./Redusers/AppSlise"
+
+import MainSlice from './Redusers/AppSlise';
 
 
 const rootReducers = combineReducers({
-  mainReducer,
+  MainSlice,
   [sneakersApi.reducerPath]: sneakersApi.reducer
 })
 
