@@ -18,35 +18,37 @@ const Products = () => {
   const Navigate = useNavigate();
   const Location = useLocation();
   const fakeArr = [...new Array(8)]; // for loader
-  // const { data = [], isLoading } = useGetSneakersQuery('');
-const {isLoading} = useAppSelector(state => state.MainSlice)
-const {products} = useAppSelector(state => state.MainSlice)
+
+  const { isLoading } = useAppSelector((state) => state.MainSlice);
+  const { products } = useAppSelector((state) => state.MainSlice);
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   const popupList = ['все', 'цена(по возрастанию)', 'цена(по убыванию)'];
-  const selectorList = ['all','increase', 'decrease']
-  const [sortNameIndex, setSortNameIndex] = useState(0) 
+  const selectorList = ['all', 'increase', 'decrease'];
+  const [sortNameIndex, setSortNameIndex] = useState(0);
   const [currentSort, setCurrentSort] = useState('all');
-const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
+
   const onClickSelector = (idx: number) => {
-    setSortNameIndex(idx)
+    setSortNameIndex(idx);
     setCurrentSort(selectorList[idx]);
     setIsOpenPopup(false);
   };
-useEffect(() => {
-  dispatch(FetchProducts(currentSort,'Products'))
-},[currentSort])
+
+  useEffect(() => {
+    dispatch(FetchProducts(currentSort, 'Products'));
+  }, [currentSort]);
 
   return (
     <div className="home-wrapper">
-      <div>
+      <div className="popup">
         {isOpenPopup ? (
-          <ul>
+          <ul >
             {popupList.map((item, idx) => {
-              return <li onClick={()=> onClickSelector(idx)}>{item}</li>;
+              return <li onClick={() => onClickSelector(idx)}>{item}</li>;
             })}
           </ul>
         ) : (
-          <h2 onClick={()=>setIsOpenPopup(true)}>{popupList[sortNameIndex]}</h2>
+          <h2 onClick={() => setIsOpenPopup(true)}>{popupList[sortNameIndex]}</h2>
         )}
       </div>
       <div className="product-item-container">

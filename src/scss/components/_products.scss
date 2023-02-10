@@ -1,7 +1,7 @@
 .product-item-container{
   max-width: 1230px;
   display:flex;
-  margin: 100px 0;
+  margin: 10px 0;
   flex-wrap: wrap;
   .product-item{
     width: 25%;
@@ -14,4 +14,35 @@
     }
     
   } 
+  
+}
+
+.popup{
+  width: 200px;
+  height:100px;
+  margin:20px 20px 0 auto;
+  & li {
+    cursor: pointer;
+    padding-left: 10px;
+    height: 32px;
+    line-height: 32px;
+    &:hover{
+      background-color: rgb(245, 245, 245);
+    }
+    &:not(:last-child){
+      border-bottom:1px solid rgb(212, 212, 212);
+
+    }
+  }
+  & ul {
+    border: 1px solid rgb(212, 212, 212);
+    border-radius:5px;
+  }
+  & h2{
+    padding-left: 10px;
+    border: 1px solid rgb(212, 212, 212);
+    cursor: pointer;
+    border-radius:5px;
+  }
+
 }
