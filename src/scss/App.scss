@@ -5,7 +5,6 @@
 
 body {
   background-color: $background;
-  
 }
 button{
   color:$black;
@@ -25,7 +24,10 @@ button{
 }
 .wrapper{
   width:100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
 }
-.gray-background{
-  background-color:$gray-line;
-}
+
+

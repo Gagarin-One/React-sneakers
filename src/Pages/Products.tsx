@@ -1,11 +1,8 @@
-import { skipToken } from '@reduxjs/toolkit/dist/query';
-import { useGetSneakersQuery } from '../Store/Api/Api';
 import { useAppDispatch, useAppSelector } from '../Store/hooks';
 import MyLoader from '../Components/Loader';
 import { useLocation, useNavigate } from 'react-router';
 import { useEffect, useState } from 'react';
 import { FetchProducts } from '../Store/Redusers/ActionCreators';
-import { MainSlice } from '../Store/Redusers/AppSlise';
 type Products = {
   id: number;
   price: number;
@@ -42,7 +39,7 @@ const Products = () => {
     <div className="home-wrapper">
       <div className="popup">
         {isOpenPopup ? (
-          <ul >
+          <ul>
             {popupList.map((item, idx) => {
               return <li onClick={() => onClickSelector(idx)}>{item}</li>;
             })}

@@ -1,11 +1,16 @@
 @import '../libs/variables';
-
+.footer-wrapper{
+ margin-top:auto;
+}
+.gray-background{
+  background-color:$gray-line;
+}
 .footer{
   max-width: 1230px;
   height: 200px;
-  margin: 0 auto;
+  margin:0 auto;
   display: flex;
-  padding-top: 40px;
+  padding:40px 20px 0;
   justify-content: space-between;
   h2{
     color:$gray;

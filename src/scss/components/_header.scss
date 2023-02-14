@@ -11,7 +11,27 @@
   margin: 0 auto;
   max-width: 1230px;
   display:flex;
+  padding: 0 20px;
+  @media (min-width: 300px) and (max-width: 800px) {
+    .schedule, .contacts, .delivery{
+      display:none;
+    }
+    .product-nav{
+      max-width: 600px;
+    }
+  }
+  @media (max-width: 450px) {
+  }
+  @media(min-width:300px) and (max-width:450px){
+      flex-direction: column;
+  }
+  @media(min-width: 800px){
+    .product-nav{
+      width: 600px;
+    }
+  }
 }
+
 
 .top-header-container{
   width: 100%;
@@ -44,15 +64,20 @@
   width: 100%;
   height: 73px;
   box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+  @media (min-width: 300px) and (max-width: 800px) {
+    h2{
+      display:none;
+    }
+  }
 }
 
 .bottom-header{
+  
   color:rgb(0, 0, 0);
   & h2,a {
     line-height: 68px;
   }
   .product-nav{
-    width: 600px;
     margin-top: 3px;
   }
   .cart-and-search{
