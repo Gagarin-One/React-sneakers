@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
             <h2 className="red">или</h2>
             <h2>регистрация</h2>
           </div>
-          <h2 className="delivery">Оплата и доставка</h2>
+          <Link to='delivery' className="delivery">Оплата и доставка</Link>
           <div className="contacts side-header">
             <h2 className="schedule">8-22 будни · 8-20 выходные</h2>
             <h2>+7 800 700 32 53</h2>
